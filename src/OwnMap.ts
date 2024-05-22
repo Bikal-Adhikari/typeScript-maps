@@ -22,12 +22,18 @@ export class OwnMap {
   }
 
   addMark(pointer: Pointer): void {
-    new google.maps.Marker({
+    const mark = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: pointer.location.lat,
         lng: pointer.location.lng,
       },
+    });
+    mark.addListener("click", () => {
+      const infoWindow = new google.maps.InfoWindow({
+        content: "Hi there!",
+      });
+      infoWindow.open(this.googleMap, mark);
     });
   }
 }
