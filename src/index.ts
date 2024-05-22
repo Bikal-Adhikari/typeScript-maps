@@ -2,10 +2,12 @@
 import { OwnMap } from "./OwnMap";
 
 import { User } from "./User";
+import { Company } from "./Company";
 
 const user = new User();
 
-// const company = new Company();
+const company = new Company();
 
 const ownMap = new OwnMap("map");
-ownMap.addUserMark(user);
+ownMap.addMark(user);
+ownMap.addMark(company);

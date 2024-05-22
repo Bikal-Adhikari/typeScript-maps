@@ -1,7 +1,10 @@
 /// <reference types="@types/google.maps" />
-import { User } from "./User";
-import { Company } from "./Company";
-
+interface Pointer {
+  location: {
+    lat: number;
+    lng: number;
+  };
+}
 export class OwnMap {
   private googleMap: google.maps.Map;
 
@@ -18,14 +21,13 @@ export class OwnMap {
     );
   }
 
-  addUserMark(user: User): void {
+  addMark(pointer: Pointer): void {
     new google.maps.Marker({
       map: this.googleMap,
       position: {
-        lat: user.location.lat,
-        lng: user.location.lng,
+        lat: pointer.location.lat,
+        lng: pointer.location.lng,
       },
     });
   }
-  addCompanyMark(company: Company): void {}
 }
