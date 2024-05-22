@@ -4,6 +4,7 @@ interface Pointer {
     lat: number;
     lng: number;
   };
+  markInfo(): string;
 }
 export class OwnMap {
   private googleMap: google.maps.Map;
@@ -31,7 +32,7 @@ export class OwnMap {
     });
     mark.addListener("click", () => {
       const infoWindow = new google.maps.InfoWindow({
-        content: "Hi there!",
+        content: pointer.markInfo(),
       });
       infoWindow.open(this.googleMap, mark);
     });
