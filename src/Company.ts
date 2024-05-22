@@ -1,12 +1,14 @@
 import { faker } from "@faker-js/faker";
+import { Pointer } from "./OwnMap";
 
-export class Company {
+export class Company implements Pointer {
   companyName: string;
   catchPhrase: string;
   location: {
     lat: number;
     lng: number;
   };
+  color: string = "orange";
   constructor() {
     this.companyName = faker.company.name();
     this.catchPhrase = faker.company.catchPhrase();

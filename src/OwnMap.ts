@@ -1,10 +1,11 @@
 /// <reference types="@types/google.maps" />
-interface Pointer {
+export interface Pointer {
   location: {
     lat: number;
     lng: number;
   };
   markInfo(): string;
+  color: string;
 }
 export class OwnMap {
   private googleMap: google.maps.Map;
