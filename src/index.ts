@@ -1,6 +1,5 @@
 /// <reference types="@types/google.maps" />
 import { OwnMap } from "./OwnMap";
-
 import { User } from "./User";
 import { Company } from "./Company";
 
